@@ -6,15 +6,15 @@ export const getAllPosts = (req: Request, res: Response) => {
 };
 
 export const createNewPost = (req: Request, res: Response) => {
-  const { imageUrl, title, description } = req.body;
+ const { imageUrl, title, content } = req.body;
 
-  if (!imageUrl || !title || !description) {
-    return res.status(400).json({
-      error: "imageUrl, title and description are required",
-    });
-  }
+if (!imageUrl || !title || !content) {
+  return res.status(400).json({
+    error: "imageUrl, title and content are required",
+  });
+}
 
-  const newPost = createPost(imageUrl, title, description);
+const newPost = createPost(imageUrl, title, content);
   res.status(201).json(newPost);
 };
 

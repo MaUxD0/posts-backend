@@ -1,4 +1,4 @@
-import { Post } from "../post.types";
+import { Post } from "./post.types";
 
 let posts: Post[] = [];
 let currentId = 1;
