@@ -1,22 +1,24 @@
-import { Post } from "./post.types";
+interface Post {
+  id: number;
+  imageUrl: string;
+  title: string;
+  content: string;
+}
 
 let posts: Post[] = [];
-let currentId = 1;
 
-export const getPosts = (): Post[] => {
-  return posts;
-};
+export const getPosts = () => posts;
 
 export const createPost = (
   imageUrl: string,
   title: string,
-  description: string
+  content: string
 ): Post => {
   const newPost: Post = {
-    id: currentId++,
+    id: Date.now(),
     imageUrl,
     title,
-    description,
+    content,
   };
 
   posts.push(newPost);
